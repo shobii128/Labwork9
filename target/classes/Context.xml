@@ -1,0 +1,26 @@
+<beans
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.springframework.org/schema/beans"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="clo" class="pk.edu.nust.seecs.gradebook.dao.CloDao"/>
+    <bean id="content" class="pk.edu.nust.seecs.gradebook.dao.ContentDao"/>
+    <bean id="course" class="pk.edu.nust.seecs.gradebook.dao.CourseDao"/>
+    
+    
+    
+    <bean id="grade" class="pk.edu.nust.seecs.gradebook.dao.GradeDao"/>
+    <bean id="student" class="pk.edu.nust.seecs.gradebook.dao.StudentDao"/>
+    <bean id="teacher" class="pk.edu.nust.seecs.gradebook.dao.TeacherDao"/>
+
+    <bean id="bo" class="pk.edu.nust.seecs.gradebook.Bo.bo">
+        <property name="cloDao" ref="clo"/>
+        <property name="contentDao" ref="content"/>
+        <property name="courseDao" ref="course"/>
+        <property name="gradeDao" ref="grade"/>
+        <property name="studentDao" ref="student"/>
+        <property name="teacherDao" ref="teacher"/>
+    </bean>
+
+</beans>
